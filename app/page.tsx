@@ -9,7 +9,7 @@ const HomePage = (props: Props) => {
   return (
     <main className="py-4 px-48">
       <div>
-        <h1>HomePage Primer (Ovo nam je aplikacija homepage)</h1>
+        <h1>Vercel Test | HomePage Primer (Ovo nam je aplikacija homepage)</h1>
         <p>istestirati:</p>
         <ol>
           <li>linkove</li>
