@@ -9,7 +9,7 @@ const getUsers = cache(() =>
 async function deleteUser(userId: string) {
   try {
     // setLoading(true);
-    await fetch('/api/users/delete?id=' + userId, {
+    await fetch('/api/users/' + userId, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     })

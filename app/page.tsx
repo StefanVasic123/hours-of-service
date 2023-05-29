@@ -12,7 +12,7 @@ export default async function HomePage(props: Props) {
   const feed = await prisma.post.findMany()
 
   return (
-    <main className="py-4 px-48">
+    <main className="py-4">
       <div>
         <h1>
           Vercel Test, feed: xyz | HomePage Primer (Ovo nam je aplikacija

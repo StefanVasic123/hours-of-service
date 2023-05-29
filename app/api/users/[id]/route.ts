@@ -30,7 +30,6 @@ export async function PATCH(
     where: { id },
     data: json,
   })
-
   if (!updated_user) {
     return new NextResponse('No user with ID found', { status: 404 })
   }
@@ -47,7 +46,6 @@ export async function DELETE(
     await prisma.user.delete({
       where: { id },
     })
-
     return new NextResponse(null, { status: 204 })
   } catch (error: any) {
     if (error.code === 'P2025') {
