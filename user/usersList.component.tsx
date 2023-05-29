@@ -23,7 +23,7 @@ export default function UsersList() {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:3000/api/users')
+    fetch('/api/users')
       .then((res) => res.json())
       .then((data) => {
         setUsers(data)
