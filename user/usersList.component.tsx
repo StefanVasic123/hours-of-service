@@ -2,11 +2,9 @@
 import { User } from '@prisma/client'
 import React, { cache, use } from 'react'
 
-/*
 const getUsers = cache(() =>
   fetch('http://localhost:3000/api/users').then((res) => res.json())
 )
-*/
 
 async function deleteUser(userId: string) {
   try {
@@ -25,11 +23,9 @@ async function deleteUser(userId: string) {
 }
 
 export default function UsersList() {
-  // let users = use<User[]>(getUsers())
+  let users = use<User[]>(getUsers())
   // console.log('users_here: ', users)
-  return <div>test test test</div>
-
-  /* 
+  return (
     <div>
       {users.map((user) => (
         <div key={user.id}>
@@ -38,5 +34,5 @@ export default function UsersList() {
         </div>
       ))}
     </div>
-    */
+  )
 }
