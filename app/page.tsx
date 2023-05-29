@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import prisma from '@/lib/prisma'
+/*
 import UsersList from '@/src/components/user/usersList.component'
 import CreateUserForm from '@/src/components/user/createUserForm.component'
+*/
 
 // rafce => create-arrow-function-component-export shortcut
 // tsafce
@@ -43,11 +45,13 @@ export default async function HomePage(props: Props) {
             <li key={post.id}>title: {post.title}</li>
           ))}
         </ul>
+        {/* 
         <div>
           server_users_list: <UsersList />
         </div>
         <h4>Kreiraj novu instancu u bazi podataka (POST): </h4>
         <CreateUserForm />
+        */}
       </div>
     </main>
   )
