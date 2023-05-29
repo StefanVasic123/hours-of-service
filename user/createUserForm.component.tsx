@@ -34,7 +34,7 @@ export default function CreateUserForm() {
   return (
     <div>
       <Head>
-        <title>Create Post</title>
+        <title>Create User</title>
       </Head>
       <div>
         <form onSubmit={handleSubmit}>

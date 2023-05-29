@@ -3,6 +3,7 @@ import Link from 'next/link'
 import prisma from '@/lib/prisma'
 import UsersList from '../user/usersList.component'
 import CreateUserForm from '../user/createUserForm.component'
+import UpdateUserForm from '../user/updateUserForm.component'
 
 // rafce => create-arrow-function-component-export shortcut
 // tsafce
@@ -48,6 +49,8 @@ export default async function HomePage(props: Props) {
         </div>
         <h4>Kreiraj novu instancu u bazi podataka (POST): </h4>
         <CreateUserForm />
+        <h4>Update-uj korisnika po ID-u (UPDATE): </h4>
+        <UpdateUserForm />
       </div>
     </main>
   )
