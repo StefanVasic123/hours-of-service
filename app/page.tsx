@@ -10,23 +10,6 @@ type Props = {}
 
 export default async function HomePage(props: Props) {
   const feed = await prisma.post.findMany()
-  const users = await prisma.user.findMany()
-
-  async function deleteUser(userId: string) {
-    try {
-      // setLoading(true);
-      await fetch('/api/users/delete?id=' + userId, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-      })
-
-      //  setLoading(false);
-      //  await router.push("/");
-    } catch (error) {
-      console.log('error', error)
-      //  setLoading(false);
-    }
-  }
 
   return (
     <main className="py-4 px-48">
@@ -60,17 +43,6 @@ export default async function HomePage(props: Props) {
             <li key={post.id}>title: {post.title}</li>
           ))}
         </ul>
-        <div>
-          list users:{' '}
-          {users.map((user: any) => (
-            <li key={user.id}>
-              ime: {user.name}; email: {user.email}
-              <button /* onClick={() => deleteUser(user.id)} */>
-                Obrisi korisnika
-              </button>
-            </li>
-          ))}
-        </div>
         <div>
           server_users_list: <UsersList />
         </div>
