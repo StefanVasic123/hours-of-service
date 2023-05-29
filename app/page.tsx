@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import prisma from '@/lib/prisma'
-import UsersList from './components/user/usersList.component'
-import CreateUserForm from './components/user/createUserForm.component'
+import UsersList from '../user/usersList.component'
+import CreateUserForm from '../user/createUserForm.component'
 
 // rafce => create-arrow-function-component-export shortcut
 // tsafce
