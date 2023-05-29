@@ -2,9 +2,8 @@
 import { User } from '@prisma/client'
 import React, { cache, use } from 'react'
 
-const getUsers = cache(() =>
+const getUsers = () =>
   fetch('http://localhost:3000/api/users').then((res) => res.json())
-)
 
 async function deleteUser(userId: string) {
   try {
