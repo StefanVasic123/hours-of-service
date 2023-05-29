@@ -1,10 +1,5 @@
 'use client'
-import { User } from '@prisma/client'
-import React, { cache, use } from 'react'
-
-const getUsers = cache(() =>
-  fetch('http://localhost:3000/api/users').then((res) => res.json())
-)
+import React, { useState, useEffect } from 'react'
 
 async function deleteUser(userId: string) {
   try {
@@ -23,11 +18,24 @@ async function deleteUser(userId: string) {
 }
 
 export default function UsersList() {
-  let users = use<User[]>(getUsers())
-  // console.log('users_here: ', users)
+  const [users, setUsers] = useState([])
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('http://localhost:3000/api/users')
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <p>Ucitavanje...</p>
+  if (!users) return <p>Nema korisnika</p>
   return (
     <div>
-      {users.map((user) => (
+      {users.map((user: { id: string; name: string }) => (
         <div key={user.id}>
           <h3>{user.name}</h3>
           <button onClick={() => deleteUser(user.id)}>Obrisi korisnika</button>
